@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="distance_text_side">50dp</dimen>
+    <dimen name="distance_text_top">50dp</dimen>
+    <dimen name="small">20dp</dimen>
+    <dimen name="medium">40dp</dimen>
+    <dimen name="biiig">100dp</dimen>
+    <dimen name="distance_emotion_buttons">30dp</dimen>
+</resources>

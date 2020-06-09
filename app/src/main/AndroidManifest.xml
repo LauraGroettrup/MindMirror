@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fh.joanneum.mindmirror">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Registration" />
+        <activity android:name=".RegistrationConfirmation" />
+        <activity android:name=".PathSelection" />
+        <activity android:name=".conventionalpath.ConventionalStart" />
+        <activity android:name=".conventionalpath.EmotionWordSelection" />
+        <activity android:name=".conventionalpath.EmotionConfirmation"/>
+        <activity android:name=".creativepath.CreativeStart" />
+        <activity android:name=".creativepath.EmotionPicSelection" />
+        <activity android:name=".creativepath.PictureExpression" />
+        <activity android:name=".creativepath.SituationAnalysis" />
+        <activity android:name=".analysis.Cross" />
+        <activity android:name=".analysis.SolutionFinding1" />
+        <activity android:name=".analysis.SolutionFinding2" />
+        <activity android:name=".analysis.SolutionList" />
+        <activity android:name=".analysis.EarlyEnd" />
+    </application>
+
+</manifest>

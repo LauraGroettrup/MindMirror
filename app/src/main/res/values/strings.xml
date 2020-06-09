@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">MindMirror</string>
+    <string name="enter_username">Bitte gib einen Usernamen an:</string>
+    <string name="enter_password">Bitte gib ein Password ein:</string>
+    <string name="enter_password_hint">Mindestens 8 Zeichen mit einer Zahl und einem Sonderzeichen.</string>
+    <string name="enter_password_warning">Dieses Passwort entspricht nicht den Anforderungen!</string>
+    <string name="enter_email">Bitte gib eine Email Adresse an:</string>
+    <string name="enter_name">Wie möchtest du angesprochen werden?</string>
+    <string name="register">Registrieren</string>
+    <string name="welcome">Willkommen User!</string>
+    <string name="registration_description">Schön, dass du dich hier angemeldet hast. \nMindMirror ermöglicht es dir, dich selber besser kennenzulernen und deine Gefühle besser zu verstehen. Dadurch kannst du langfristig selbst bestimmen, wie du mit ihnen umgehst.</string>
+    <string name="login">Login</string>
+    <string name="logo">Logo</string>
+    <string name="hello">Hallo User!</string>
+    <string name="wellbeing">Na, wie läuft\'s so?</string>
+    <string name="choose_path_question">Ich möchte heute folgenden Weg wählen:</string>
+    <string name="creativ">Kreativ</string>
+    <string name="conventional">Konventionell</string>
+    <string name="start">Start</string>
+    <string name="conventionalDesciption">Du möchtest heute allso deine Stimmung mit Worten ausdrücken?\nEs ist hilfreich für das Gespräch mit anderen sowie für einen selbst seine Stimmung ausdrücken zu können. Mal schaun ob wir es schaffen deine Emotionen in Worte zu fassen!</string>
+    <string name="choose_words_description">Wähle ein oder mehrere Adjektive, die deine momentane Laune repräsentieren.</string>
+    <string name="resume_with_word_selection">Auswahl bestätigen</string>
+    <string name="emotion">Emotion</string>
+    <string name="choose_picture_description">Wie geht es dir gerade? \nBitte wähle jenes Bild aus, das deine Stimmung am ehesten ausdrückt.</string>
+    <string name="emotion_selection">Du hast Emotionen gewählt\nMöchtest du mit dieser Auswahl fortfahren?</string>
+    <string name="back_to_selection">Auswahl bearbeiten</string>
+    <string name="next">Weiter</string>
+    <string name="early_end_description">Alles klar, du möchtest deine Stimmung nicht verändern.\n
+        Dann hoffe ich, dass es dir gut geht oder du du dich bewusst mit deiner Stimmung auseinandersetzten mächtest, weil du es gerade für sinnvoll empfindest.\n
+        Schön, dass du dich aktiv mit deinen Emotionen auseinander setzt :)
+    </string>
+    <string name="goodbye">Bis zum nächsten Mal, User!</string>
+    <string name="back_to_main">Zurück zum Hauptmenü</string>
+
+</resources>
