@@ -21,6 +21,7 @@ class EmotionPicSelection : AppCompatActivity() {
 
         gridPicEmotions.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
+                CreativeSession.setPicture(parent.getItemAtPosition(position).toString().toInt())
                 Toast.makeText(
                     this@EmotionPicSelection,
                     " Clicked Emotion: " + parent.getItemAtPosition(position).toString(),

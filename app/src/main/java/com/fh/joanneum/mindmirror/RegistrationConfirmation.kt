@@ -11,6 +11,8 @@ class RegistrationConfirmation : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registration_confirmation)
 
+        lblUsername.setText(getString(R.string.welcome, User.getNickname()))
+
         btnToLogin.setOnClickListener {
             val intent = Intent(this, Login::class.java)
             startActivity(intent)

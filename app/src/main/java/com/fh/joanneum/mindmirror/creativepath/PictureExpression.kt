@@ -11,6 +11,7 @@ class PictureExpression : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.picture_expression)
+        iVselectedPicture.setImageResource(CreativeSession.getPicture())
 
         btnContinue.setOnClickListener {
             val intent = Intent(this, SituationAnalysis::class.java)
