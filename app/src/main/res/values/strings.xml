@@ -31,5 +31,10 @@
     </string>
     <string name="goodbye">Bis zum nächsten Mal, User!</string>
     <string name="back_to_main">Zurück zum Hauptmenü</string>
+    <string name="end">Super!\nDu hast dich mit deinen Emotionen und ihren Gründen auseinandergesetzt. Außerdem hast du aktiv überlegt, wie du deine Stimmung verändern kannst.
+     Dies wird dich langfristig widerstandsfähiger gegen äußere Einflüsse machen und dich dazu befähigen, dein Leben selbst bestimmt zu gestalten.?n
+    Probiere nun folgende Möglichkeiten aus, um dich in eine andere Stimmung zu versetzten:</string>
+    <string name="good_luck">Viewl Glück dabei!</string>
+    <string name="options">Handlungsmöglichkeiten</string>
 
 </resources>

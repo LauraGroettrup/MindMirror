@@ -32,6 +32,7 @@
         <activity android:name=".analysis.SolutionFinding2" />
         <activity android:name=".analysis.SolutionList" />
         <activity android:name=".analysis.EarlyEnd" />
+        <activity android:name=".analysis.End" />
     </application>
 
 </manifest>
