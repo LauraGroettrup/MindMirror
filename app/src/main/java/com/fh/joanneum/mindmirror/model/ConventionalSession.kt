@@ -3,8 +3,7 @@ package com.fh.joanneum.mindmirror.model
 object ConventionalSession {
     private var emotions: MutableList<String> = mutableListOf("")
     private var a2: String = ""
-    private var a3: String = ""
-    private var a4: Boolean = false
+    private var a3: Boolean = false
     private var solutions: MutableList<String> = mutableListOf("")
 
     fun getEmotions(): List<String>{
@@ -19,25 +18,18 @@ object ConventionalSession {
         }
     }
 
-    fun geta2():String{
+    fun getA2(): String {
         return a2
     }
-    fun seta2(a2:String){
+    fun setA2(a2:String){
         this.a2 = a2
     }
 
-    fun geta3():String{
+    fun getA3():Boolean{
         return a3
     }
-    fun seta3(a3:String){
+    fun setA3(a3:Boolean){
         this.a3 = a3
-    }
-
-    fun geta4():Boolean{
-        return a4
-    }
-    fun seta4(a4:Boolean){
-        this.a4 = a4
     }
 
     fun getSolutions(): List<String>{
@@ -50,6 +42,14 @@ object ConventionalSession {
         else{
             solutions.remove(solution)
         }
+    }
+
+    fun emotionsToString(): String{
+        var emotionsAsString = ""
+        for (emotion in emotions){
+            emotionsAsString = emotionsAsString + emotion + ","
+        }
+        return emotionsAsString
     }
 
 }

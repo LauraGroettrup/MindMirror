@@ -10,8 +10,10 @@
     <string name="welcome">Willkommen %1$s!</string>
     <string name="registration_description">Schön, dass du dich hier angemeldet hast. \nMindMirror ermöglicht es dir, dich selber besser kennenzulernen und deine Gefühle besser zu verstehen. Dadurch kannst du langfristig selbst bestimmen, wie du mit ihnen umgehst.</string>
     <string name="login">Login</string>
+    <string name="login_name_or_email">Bitte gebe deinen Username oder deine Email an:</string>
+    <string name="login_password">Bitte gebe dein Passwort ein</string>
     <string name="logo">Logo</string>
-    <string name="hello">Hallo User!</string>
+    <string name="hello">Hallo %1$s!</string>
     <string name="wellbeing">Na, wie läuft\'s so?</string>
     <string name="choose_path_question">Ich möchte heute folgenden Weg wählen:</string>
     <string name="creativ">Kreativ</string>
@@ -22,19 +24,19 @@
     <string name="resume_with_word_selection">Auswahl bestätigen</string>
     <string name="emotion">Emotion</string>
     <string name="choose_picture_description">Wie geht es dir gerade? \nBitte wähle jenes Bild aus, das deine Stimmung am ehesten ausdrückt.</string>
-    <string name="emotion_selection">Du hast Emotionen gewählt\nMöchtest du mit dieser Auswahl fortfahren?</string>
+    <string name="emotion_selection">Du hast Emotionen gewählt: %1$s\nMöchtest du mit dieser Auswahl fortfahren?</string>
     <string name="back_to_selection">Auswahl bearbeiten</string>
     <string name="next">Weiter</string>
     <string name="early_end_description">Alles klar, du möchtest deine Stimmung nicht verändern.\n
         Dann hoffe ich, dass es dir gut geht oder du du dich bewusst mit deiner Stimmung auseinandersetzten mächtest, weil du es gerade für sinnvoll empfindest.\n
         Schön, dass du dich aktiv mit deinen Emotionen auseinander setzt :)
     </string>
-    <string name="goodbye">Bis zum nächsten Mal, User!</string>
+    <string name="goodbye">Bis zum nächsten Mal, %1$s!</string>
     <string name="back_to_main">Zurück zum Hauptmenü</string>
     <string name="end">Super!\nDu hast dich mit deinen Emotionen und ihren Gründen auseinandergesetzt. Außerdem hast du aktiv überlegt, wie du deine Stimmung verändern kannst.
-     Dies wird dich langfristig widerstandsfähiger gegen äußere Einflüsse machen und dich dazu befähigen, dein Leben selbst bestimmt zu gestalten.?n
+     Dies wird dich langfristig widerstandsfähiger gegen äußere Einflüsse machen und dich dazu befähigen, dein Leben selbst bestimmt zu gestalten.\n
     Probiere nun folgende Möglichkeiten aus, um dich in eine andere Stimmung zu versetzten:</string>
-    <string name="good_luck">Viewl Glück dabei!</string>
+    <string name="good_luck">Viel Glück dabei!</string>
     <string name="options">Handlungsmöglichkeiten</string>
 
 </resources>

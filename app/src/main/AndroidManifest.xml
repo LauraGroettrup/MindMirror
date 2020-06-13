@@ -26,7 +26,7 @@
         <activity android:name=".creativepath.CreativeStart" />
         <activity android:name=".creativepath.EmotionPicSelection" />
         <activity android:name=".creativepath.PictureExpression" />
-        <activity android:name=".creativepath.SituationAnalysis" />
+        <activity android:name=".analysis.SituationAnalysis" />
         <activity android:name=".analysis.Cross" />
         <activity android:name=".analysis.SolutionFinding1" />
         <activity android:name=".analysis.SolutionFinding2" />
