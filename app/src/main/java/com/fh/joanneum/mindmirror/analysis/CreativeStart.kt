@@ -1,13 +1,13 @@
-package com.ug.mirrorapp.control
+package com.fh.joanneum.mindmirror.analysis
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ug.mirrorapp.R
+import com.fh.joanneum.mindmirror.R
 
 class ActivityCreativeStart : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_creative_start)
+        setContentView(R.layout.creative_start)
     }
 }

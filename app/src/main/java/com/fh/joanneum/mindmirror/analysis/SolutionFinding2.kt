@@ -8,17 +8,26 @@ import kotlinx.android.synthetic.main.solution_finding_2.*
 
 class SolutionFinding2 : AppCompatActivity() {
 
+    lateinit var answer5: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.solution_finding_2)
 
+
         btnYes.setOnClickListener {
+            answer5 = eTAnotherSolution.text.toString()
+            //add answer5 to model (List)
+            CreativeSession.setSolutions(answer5)
             val intent = Intent(this, SolutionFinding2::class.java)
             startActivity(intent)
         }
 
         btnNo.setOnClickListener {
-            val intent = Intent(this, SolutionList::class.java)
+            answer5 = eTAnotherSolution.text.toString()
+            //add answer5 to model (List)
+            CreativeSession.setSolutions(answer5)
+            val intent = Intent(this, ActivitySolutionList::class.java)
             startActivity(intent)
         }
     }

@@ -13,6 +13,11 @@ class End : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.end)
 
+        //get data from model
+        var chosenSolution = CreativeSession.getChosenSolution()
+        //textView setText
+        lblOptions.text = chosenSolution
+
         btnBackToMain.setOnClickListener {
             val intent = Intent(this, PathSelection::class.java)
             startActivity(intent)

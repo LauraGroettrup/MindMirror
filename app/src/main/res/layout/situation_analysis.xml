@@ -10,26 +10,26 @@
         android:id="@+id/tVPicMeaning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="60dp"
         android:text="Das Bild bedeutet für dich"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/tVPicSubjectiveMeaning"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.444" />
 
     <TextView
         android:id="@+id/tVPicSubjectiveMeaning"
-        android:layout_width="225dp"
-        android:layout_height="124dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="205dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="48dp"
         android:text="Sample Text Meaning from before"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/tVReasonSituation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -40,13 +40,15 @@
         android:text="Warum fühlst du dich gerade so? Was ist vorher geschehen?"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/eTReasonSituation"
-        tools:layout_editor_absoluteX="91dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/eTReasonSituation"
         android:layout_width="281dp"
         android:layout_height="219dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="56dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"

@@ -1,9 +1,10 @@
 object CreativeSession {
     private var picture: Int = -1
-    private var a2: String = ""
-    private var a3: String = ""
-    private var a4: Boolean = false
+    private var answer2: String = ""
+    private var answer3: String = ""
+    private var answer4: Boolean = false
     private var solutions: MutableList<String> = mutableListOf("")
+    private var chosenSolution: String = ""
 
     fun getPicture(): Int {
         return picture
@@ -13,29 +14,30 @@ object CreativeSession {
         this.picture = pic
     }
 
-    fun geta2(): String {
-        return a2
+    fun getAnswer2():String{
+        return answer2
     }
 
-    fun seta2(a2: String) {
-        this.a2 = a2
+    fun setAnswer2(answer: String){
+        this.answer2 = answer
     }
 
-    fun geta3(): String {
-        return a3
+    fun getAnswer3():String{
+        return answer3
     }
 
-    fun seta3(a3: String) {
-        this.a3 = a3
+    fun setAnswer3(answer: String){
+        this.answer3 = answer
     }
 
-    fun geta4(): Boolean {
-        return a4
+    fun getAnswer4():Boolean{
+        return answer4
     }
 
-    fun seta4(a4: Boolean) {
-        this.a4 = a4
+    fun setAnswer4(answer: Boolean){
+        this.answer4 = answer
     }
+
 
     fun getSolutions(): List<String> {
         return solutions
@@ -47,6 +49,14 @@ object CreativeSession {
         } else {
             solutions.remove(solution)
         }
+    }
+
+    fun setChosenSolution(solution:String){
+        this.chosenSolution = solution
+    }
+
+    fun getChosenSolution(): String{
+        return chosenSolution
     }
 
 }

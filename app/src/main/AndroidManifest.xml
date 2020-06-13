@@ -30,7 +30,7 @@
         <activity android:name=".analysis.Cross" />
         <activity android:name=".analysis.SolutionFinding1" />
         <activity android:name=".analysis.SolutionFinding2" />
-        <activity android:name=".analysis.SolutionList" />
+        <activity android:name=".analysis.ActivitySolutionList" />
         <activity android:name=".analysis.EarlyEnd" />
         <activity android:name=".analysis.End" />
     </application>
