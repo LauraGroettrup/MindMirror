@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.R
+import com.fh.joanneum.mindmirror.analysis.SituationAnalysis
 import kotlinx.android.synthetic.main.picture_expression.*
 
 class PictureExpression : AppCompatActivity() {

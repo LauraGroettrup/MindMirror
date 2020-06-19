@@ -29,7 +29,7 @@ object User {
         return nickname
     }
     fun setNickname(nickname:String){
-        this.password = password
+        this.nickname = nickname
     }
 }
 

@@ -13,6 +13,8 @@ class PathSelection : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.path_selection)
 
+        lblHello.setText(getString(R.string.hello, User.getNickname()))
+
         btnConventionel.setOnClickListener {
             val intent = Intent(this, ConventionalStart::class.java)
             startActivity(intent)

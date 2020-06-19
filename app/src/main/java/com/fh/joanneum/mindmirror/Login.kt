@@ -2,7 +2,6 @@ package com.fh.joanneum.mindmirror
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -61,13 +60,9 @@ class Login : AppCompatActivity() {
 
                     }
                 }
-            /*
-        btnLogin.setOnClickListener {
-            val intent = Intent(this, PathSelection::class.java)
-            startActivity(intent)
-        }
 
- */
         }
     }
+
+
 }

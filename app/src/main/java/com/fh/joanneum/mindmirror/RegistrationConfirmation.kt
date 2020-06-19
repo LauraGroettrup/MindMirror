@@ -11,6 +11,7 @@ class RegistrationConfirmation : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.registration_confirmation)
 
+
         lblEmail.setText(getString(R.string.welcome, User.getNickname()))
 
         btnToLogin.setOnClickListener {

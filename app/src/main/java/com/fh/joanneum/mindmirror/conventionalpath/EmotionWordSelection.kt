@@ -1,12 +1,16 @@
 package com.fh.joanneum.mindmirror.conventionalpath
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.AdapterView
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.R
+import com.fh.joanneum.mindmirror.model.ConventionalSession
+import kotlinx.android.synthetic.main.word_emotion.view.*
 import kotlinx.android.synthetic.main.word_selection.*
+
 
 class EmotionWordSelection : AppCompatActivity() {
 
@@ -22,11 +26,16 @@ class EmotionWordSelection : AppCompatActivity() {
 
         gridWordEmotions.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
-                Toast.makeText(
-                    this@EmotionWordSelection,
-                    " Clicked Emotion: " + parent.getItemAtPosition(position).toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
+                var emotion = parent.getItemAtPosition(position) as String
+                var textView = view.lblEmotion
+
+                ConventionalSession.setEmotions(emotion)
+                if(ConventionalSession.getEmotions().contains(emotion)){
+                    textView.setTextColor(Color.BLACK)
+                }
+                else{
+                    textView.setTextColor(Color.GRAY)
+                }
             }
 
         btnSubmit.setOnClickListener {
