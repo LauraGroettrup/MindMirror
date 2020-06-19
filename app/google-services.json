@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1076801549920",
+    "firebase_url": "https://mindmirror-b85f7.firebaseio.com",
+    "project_id": "mindmirror-b85f7",
+    "storage_bucket": "mindmirror-b85f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076801549920:android:6f173e2436ff8cc0343505",
+        "android_client_info": {
+          "package_name": "com.fh.joanneum.mindmirror"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076801549920-nqdmjdhd490scl482si9bcluiq42inio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtWC7zZ1tqJswLM7_RpTLsV3mk61lZNIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076801549920-nqdmjdhd490scl482si9bcluiq42inio.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

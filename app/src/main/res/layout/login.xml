@@ -6,18 +6,18 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/lblUsername"
+        android:id="@+id/lblEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_text_top"
-        android:labelFor="@id/editUsername"
-        android:text="@string/enter_username"
+        android:labelFor="@id/editEmail"
+        android:text="Bitte gib eine email-Adresse an:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editUsername"
+        android:id="@+id/editEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium"
@@ -26,21 +26,21 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/lblEmail" />
 
     <TextView
-        android:id="@+id/lblPasswort"
+        android:id="@+id/lblPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_text_top"
-        android:labelFor="@id/editPasswort"
-        android:text="@string/enter_email"
+        android:labelFor="@id/editPassword"
+        android:text="Bitte gib ein Passwort an:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
 
     <EditText
-        android:id="@+id/editPasswort"
+        android:id="@+id/editPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium"
@@ -49,15 +49,16 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblPasswort" />
+        app:layout_constraintTop_toBottomOf="@+id/lblPassword" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="goClicked"
         android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPasswort" />
+        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>

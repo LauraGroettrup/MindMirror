@@ -7,6 +7,7 @@
     tools:context="creativepath.CreativeStart">
 
     <TextView
+        style="@style/MyTextStyle"
         android:id="@+id/tVnodding"
         android:layout_width="284dp"
         android:layout_height="56dp"

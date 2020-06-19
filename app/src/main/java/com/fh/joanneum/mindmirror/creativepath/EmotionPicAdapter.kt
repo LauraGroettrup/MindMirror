@@ -10,10 +10,22 @@ import kotlinx.android.synthetic.main.picture_emotion.view.*
 
 class EmotionPicAdapter : BaseAdapter {
     val emotions = intArrayOf(
-        R.drawable.happiness,
-        R.drawable.calmness,
-        R.drawable.anger,
-        R.drawable.sadness
+       // R.drawable.happiness,
+        // R.drawable.calmness,
+        // R.drawable.anger,
+        // R.drawable.sadness,
+        R.drawable.blur,
+        R.drawable.calm,
+        R.drawable.happy,
+        R.drawable.dandelion,
+        R.drawable.heart,
+        R.drawable.quiet,
+        R.drawable.sea,
+        R.drawable.cat,
+        R.drawable.adult,
+        R.drawable.child,
+        R.drawable.cloud,
+        R.drawable.scream
     )
     var context: Context? = null
 
