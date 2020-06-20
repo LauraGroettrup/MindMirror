@@ -9,13 +9,16 @@ import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.R
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+
+import kotlinx.android.synthetic.main.creative_start.*
+
 import kotlinx.android.synthetic.main.picture_selection.*
 
 class EmotionPicSelection : AppCompatActivity() {
 
     var adapter: EmotionPicAdapter? = null
     var docRef: DocumentReference = FirebaseFirestore.getInstance().document("data/creativeSession")
-    var picMap:  MutableMap<String, Int> = mutableMapOf()
+    var picMap: MutableMap<String, Int> = mutableMapOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,15 +40,22 @@ class EmotionPicSelection : AppCompatActivity() {
                 startActivity(intent)
             }
 
+        btnAddPic.setOnClickListener {
+            //if necessary, implement logic for fileupload here
+
+        }
 
     }
-    fun saveSelectedPic(){
+
+    fun saveSelectedPic() {
         var selectedPic = CreativeSession.getPicture()
         picMap.put("selected Pic", selectedPic)
         docRef.set(picMap).addOnSuccessListener {
             Log.d("Selected Pic", "Pic hast been saved.")
-        }.addOnFailureListener{
-            Log.d("Selected Pic","Document was not saved")
+        }.addOnFailureListener {
+            Log.d("Selected Pic", "Document was not saved")
+
+
         }
     }
 }

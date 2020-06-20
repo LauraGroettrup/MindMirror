@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.R
+import com.fh.joanneum.mindmirror.model.Analysis
 import com.fh.joanneum.mindmirror.model.ConventionalSession
 import kotlinx.android.synthetic.main.situation_analysis.*
 
@@ -33,14 +34,7 @@ class SituationAnalysis : AppCompatActivity() {
         }
 
         btnContinue.setOnClickListener {
-            if(creative){
-                answer3 = eTReasonSituation.text.toString()
-                //save data to model
-                CreativeSession.setAnswer3(answer3)
-            }
-            else
-                ConventionalSession.setA2(eTReasonSituation.text.toString())
-
+            Analysis.setEvents(eTReasonSituation.text.toString())
             val intent = Intent(this, Cross::class.java)
             startActivity(intent)
         }

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_text_top"
         android:labelFor="@id/editEmail"
-        android:text="Bitte gib eine email-Adresse an:"
+        android:text="@string/enter_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_text_top"
         android:labelFor="@id/editPassword"
-        android:text="Bitte gib ein Passwort an:"
+        android:text="@string/login_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEmail" />

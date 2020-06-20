@@ -24,6 +24,7 @@ class Login : AppCompatActivity() {
         email = findViewById(R.id.editEmail)
         password = findViewById(R.id.editPassword)
 
+
         // Initialize Firebase Auth
         auth = Firebase.auth
 

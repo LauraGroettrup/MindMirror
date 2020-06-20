@@ -1,12 +1,11 @@
 package com.fh.joanneum.mindmirror.analysis
 
-import Solution
-import android.content.ClipData.newIntent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import com.fh.joanneum.mindmirror.R
+import com.fh.joanneum.mindmirror.model.Analysis
 
 class ActivitySolutionList () : AppCompatActivity() {
 
@@ -14,7 +13,7 @@ class ActivitySolutionList () : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solution_list)
 
-        var items = CreativeSession.getSolutions()
+        var items = Analysis.getSolutions()
 
         //adapter
         val solutionsAdapter = ArrayAdapter(this, R.layout.row, R.id.tVItem, items)
@@ -28,7 +27,7 @@ class ActivitySolutionList () : AppCompatActivity() {
         listView.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
 
-                CreativeSession.setChosenSolution(parent.getItemAtPosition(position).toString())
+                Analysis.setChosenSolution(parent.getItemAtPosition(position).toString())
                 val intent = Intent(this, End::class.java)
                 startActivity(intent)
         }
