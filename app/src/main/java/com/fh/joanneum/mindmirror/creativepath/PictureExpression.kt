@@ -18,6 +18,7 @@ class PictureExpression : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.picture_expression)
+
         iVselectedPicture.setImageResource(CreativeSession.getPicture())
 
         inputField = findViewById(R.id.eTPicExpressionMood)

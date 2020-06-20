@@ -1,10 +1,12 @@
 object CreativeSession {
+    //private var path: String = ""
     private var picture: Int = -1
     private var answer2: String = ""
     private var answer3: String = ""
     private var answer4: Boolean = false
-    private var solutions: MutableList<String> = mutableListOf("")
+    private var solutions: MutableList<String> = mutableListOf()
     private var chosenSolution: String = ""
+
 
     fun getPicture(): Int {
         return picture
