@@ -10,13 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_text_top"
-<<<<<<< HEAD
         android:labelFor="@id/editEmail"
-        android:text="Bitte gib eine email-Adresse an:"
-=======
-        android:labelFor="@id/editUsername"
         android:text="@string/login_name_or_email"
->>>>>>> 20c862a2a07da434d37c706076aaeb69014c84b3
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,13 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_text_top"
-<<<<<<< HEAD
         android:labelFor="@id/editPassword"
-        android:text="Bitte gib ein Passwort an:"
-=======
-        android:labelFor="@id/editPasswort"
         android:text="@string/login_password"
->>>>>>> 20c862a2a07da434d37c706076aaeb69014c84b3
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEmail" />

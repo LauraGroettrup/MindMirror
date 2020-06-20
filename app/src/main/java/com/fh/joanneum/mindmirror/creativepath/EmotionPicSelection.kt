@@ -6,6 +6,7 @@ import android.widget.AdapterView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.R
+import kotlinx.android.synthetic.main.creative_start.*
 import kotlinx.android.synthetic.main.picture_selection.*
 
 class EmotionPicSelection : AppCompatActivity() {
@@ -30,5 +31,9 @@ class EmotionPicSelection : AppCompatActivity() {
                 val intent = Intent(this, PictureExpression::class.java)
                 startActivity(intent)
             }
+
+        btnAddPic.setOnClickListener {
+            //if necessary, implement logic for fileupload here
+        }
     }
 }

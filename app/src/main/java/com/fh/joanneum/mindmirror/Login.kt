@@ -15,7 +15,7 @@ class Login : AppCompatActivity() {
 
     var email: EditText? = null
     var password: EditText? = null
-    private lateinit var auth: FirebaseAuth
+    //private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +24,7 @@ class Login : AppCompatActivity() {
         email = findViewById(R.id.editEmail)
         password = findViewById(R.id.editPassword)
 
+        /*
         // Initialize Firebase Auth
         auth = Firebase.auth
 
@@ -35,9 +36,10 @@ class Login : AppCompatActivity() {
         if (auth.currentUser != null) {
             login()
         }
-
+         */
 
         btnLogin.setOnClickListener{
+            /*
             auth.signInWithEmailAndPassword(email?.text.toString(), password?.text.toString())
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
@@ -60,7 +62,11 @@ class Login : AppCompatActivity() {
 
                     }
                 }
-
+             */
+            btnLogin.setOnClickListener {
+                val intent = Intent(this, PathSelection::class.java)
+                startActivity(intent)
+            }
         }
     }
 

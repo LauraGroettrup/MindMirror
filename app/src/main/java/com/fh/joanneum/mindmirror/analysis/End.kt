@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.PathSelection
 import com.fh.joanneum.mindmirror.R
+import com.fh.joanneum.mindmirror.model.Analysis
 import kotlinx.android.synthetic.main.end.*
 
 class End : AppCompatActivity() {
@@ -14,7 +15,7 @@ class End : AppCompatActivity() {
         setContentView(R.layout.end)
 
         //get data from model
-        var chosenSolution = CreativeSession.getChosenSolution()
+        var chosenSolution = Analysis.getChoosenSolution()
         //textView setText
         lblOptions.text = chosenSolution
 
