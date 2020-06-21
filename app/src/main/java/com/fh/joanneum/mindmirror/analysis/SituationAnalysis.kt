@@ -18,7 +18,7 @@ class SituationAnalysis : AppCompatActivity() {
         setContentView(R.layout.situation_analysis)
 
         //get data from model
-        var answer2 = CreativeSession.getAnswer2()
+        var answer2 = CreativeSession.getPicExpression()
         val creative = !answer2.equals("")
         //textView
         val presentText = findViewById<TextView>(R.id.tVPicSubjectiveMeaning)
@@ -34,7 +34,7 @@ class SituationAnalysis : AppCompatActivity() {
         }
 
         btnContinue.setOnClickListener {
-            Analysis.setEvents(eTReasonSituation.text.toString())
+            Analysis.setSituation(eTReasonSituation.text.toString())
             val intent = Intent(this, Cross::class.java)
             startActivity(intent)
         }

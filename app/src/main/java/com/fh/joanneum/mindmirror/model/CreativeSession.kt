@@ -1,26 +1,25 @@
 import android.net.Uri
-import com.google.firebase.storage.StorageReference
 
 object CreativeSession {
-    //private var path: String = ""
-    private lateinit var picture: StorageReference
-    private var answer2: String = ""
+
+    private lateinit var picture:String
+    private var picExpression: String = ""
 
 
 
-    fun getPicture(): StorageReference {
+    fun getPicture(): String {
         return picture
     }
 
-    fun setPicture(pic: StorageReference) {
+    fun setPicture(pic: String) {
         this.picture = pic
     }
 
-    fun getAnswer2():String{
-        return answer2
+    fun getPicExpression():String{
+        return picExpression
     }
 
     fun setAnswer2(answer: String){
-        this.answer2 = answer
+        this.picExpression = answer
     }
 }

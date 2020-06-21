@@ -1,16 +1,16 @@
 package com.fh.joanneum.mindmirror.model
 
 object Analysis {
-    private var events: String = ""
+    private var situation: String = ""
     private var changeMood: Boolean = false
     private var solutions: MutableList<String> = mutableListOf("")
     private var chosenSolution: String = ""
 
-    fun setEvents(events_: String){
-        this.events = events_
+    fun setSituation(events_: String){
+        this.situation = events_
     }
-    fun getEvents(): String{
-        return events
+    fun getSituation(): String{
+        return situation
     }
 
     fun setChangeMood(changeMood_: Boolean){
@@ -30,8 +30,8 @@ object Analysis {
         return solutions
     }
 
-    fun setChosenSolution(choosenOne:String){
-        chosenSolution = choosenOne
+    fun setChosenSolution(chosenOne:String){
+        chosenSolution = chosenOne
     }
 
     fun getChosenSolution(): String{
@@ -39,7 +39,7 @@ object Analysis {
     }
 
     fun clear(){
-        events = ""
+        situation = ""
         changeMood = false
         solutions = mutableListOf("")
         chosenSolution = ""
