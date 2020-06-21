@@ -4,9 +4,9 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.AdapterView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.R
+import com.fh.joanneum.mindmirror.analysis.SituationAnalysis
 import com.fh.joanneum.mindmirror.model.ConventionalSession
 import kotlinx.android.synthetic.main.word_emotion.view.*
 import kotlinx.android.synthetic.main.word_selection.*
@@ -39,7 +39,7 @@ class EmotionWordSelection : AppCompatActivity() {
             }
 
         btnSubmit.setOnClickListener {
-            val intent = Intent(this, EmotionConfirmation::class.java)
+            val intent = Intent(this, SituationAnalysis::class.java)
             startActivity(intent)
         }
     }

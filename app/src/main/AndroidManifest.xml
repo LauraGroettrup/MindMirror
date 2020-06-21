@@ -22,7 +22,6 @@
         <activity android:name=".PathSelection" />
         <activity android:name=".conventionalpath.ConventionalStart" />
         <activity android:name=".conventionalpath.EmotionWordSelection" />
-        <activity android:name=".conventionalpath.EmotionConfirmation"/>
         <activity android:name=".creativepath.CreativeStart" />
         <activity android:name=".creativepath.EmotionPicSelection" />
         <activity android:name=".creativepath.PictureExpression" />

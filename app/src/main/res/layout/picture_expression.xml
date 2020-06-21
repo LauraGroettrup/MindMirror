@@ -11,34 +11,30 @@
         android:layout_width="169dp"
         android:layout_height="150dp"
         android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/tVPicExpressionMood"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:srcCompat="@tools:sample/backgrounds/scenic[3]" />
 
     <TextView
         android:id="@+id/tVPicExpressionMood"
-        android:layout_width="283dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium"
         android:text="Was drückt dieses Bild für dich aus? Inwiefern entspricht es deiner Stimmung?"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/eTPicExpressionMood"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iVselectedPicture" />
 
     <EditText
         android:id="@+id/eTPicExpressionMood"
-        android:layout_width="281dp"
-        android:layout_height="248dp"
+        android:layout_width="297dp"
+        android:layout_height="0dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="28dp"
         android:ems="10"
-        android:gravity="fill_vertical"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/btnContinue"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,12 +45,10 @@
         android:id="@+id/btnContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="@dimen/distance_text_top"
         android:text="WEITER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eTPicExpressionMood" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

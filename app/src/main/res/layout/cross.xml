@@ -10,48 +10,46 @@
         android:id="@+id/tVSituation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="@dimen/biiig"
         android:text="Deine Situation:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/tVSubjectiveSituation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.796" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tVSubjectiveSituation"
         android:layout_width="274dp"
         android:layout_height="123dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginTop="@dimen/small"
         android:text="Hier steht die genannte Situation"
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tVChangeMood"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVSituation" />
 
     <TextView
         android:id="@+id/tVChangeMood"
         android:layout_width="336dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="28dp"
         android:text="Möchtest du deine Stimmung verändern?"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btnYes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVSubjectiveSituation" />
 
     <Button
         android:id="@+id/btnYes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="170dp"
+        android:layout_marginBottom="@dimen/biiig"
         android:text="JA"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="104dp"
-        android:layout_marginBottom="170dp"
+        android:layout_marginBottom="@dimen/biiig"
         android:text="NEIN"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

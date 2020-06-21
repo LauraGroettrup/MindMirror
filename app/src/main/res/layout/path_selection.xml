@@ -10,7 +10,7 @@
         android:id="@+id/lblHello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/distance_text_top"
+        android:layout_marginTop="@dimen/biiig"
         android:text="@string/hello"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,31 +28,31 @@
 
     <Button
         android:id="@+id/btnConventionel"
-        android:layout_width="wrap_content"
+        android:layout_width="140sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/distance_text_side"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="@dimen/biiig"
         android:text="@string/conventional"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblPathQuestion" />
 
     <Button
         android:id="@+id/btnCreative"
-        android:layout_width="wrap_content"
+        android:layout_width="140sp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/biiig"
         android:layout_marginEnd="@dimen/distance_text_side"
-        android:layout_marginBottom="100dp"
         android:text="@string/creativ"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblPathQuestion" />
 
     <TextView
         android:id="@+id/lblPathQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/distance_text_top"
+        android:layout_marginTop="@dimen/biiig"
         android:text="@string/choose_path_question"
-        app:layout_constraintBottom_toTopOf="@+id/btnConventionel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblWellBeing" />
 </androidx.constraintlayout.widget.ConstraintLayout>

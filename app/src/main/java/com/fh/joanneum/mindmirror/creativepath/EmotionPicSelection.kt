@@ -34,6 +34,7 @@ class EmotionPicSelection : AppCompatActivity() {
 
         gridPicEmotions.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
+
                 var pictureReference = parent.getItemAtPosition(position) as StorageReference
                 CreativeSession.setPicture(pictureReference.name)
                 Toast.makeText(
@@ -41,6 +42,7 @@ class EmotionPicSelection : AppCompatActivity() {
                     "Picture was saved as Uri to Model." + CreativeSession.getPicture().toString(),
                     Toast.LENGTH_SHORT
                 ).show()
+
                 val intent = Intent(this, PictureExpression::class.java)
                 startActivity(intent)
             }

@@ -10,12 +10,9 @@
         android:id="@+id/lblChoosePictureDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/distance_text_side"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="@dimen/distance_text_side"
+        android:layout_marginTop="@dimen/distance_text_top"
         android:text="@string/choose_picture_description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -2,6 +2,7 @@ package com.fh.joanneum.mindmirror
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -38,27 +39,13 @@ class Login : AppCompatActivity() {
         }
 
 
-        btnLogin.setOnClickListener{
+        btnLogin.setOnClickListener {
             auth.signInWithEmailAndPassword(email?.text.toString(), password?.text.toString())
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         login()
                     } else {
-                        auth.createUserWithEmailAndPassword(
-                            email?.text.toString(),
-                            password?.text.toString()
-                        )
-                            .addOnCompleteListener(this) { task ->
-                                if (task.isSuccessful) {
-                                    login()
-                                } else {
-                                    Toast.makeText(
-                                        baseContext, "Authentication failed.",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            }
-
+                        Log.d("LOGIN", "User does not exist, you have to register first")
                     }
                 }
 
