@@ -9,46 +9,39 @@
 
     <TextView
         android:id="@+id/tVSolutionList"
-        android:layout_width="257dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/distance_text_top"
         android:text="Du hast folgende Möglichkeiten, um deine Stimmung zu verändern..."
         android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/lVSolutionList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tVDecideForSolution"
-        android:layout_width="306dp"
-        android:layout_height="63dp"
-        android:layout_marginBottom="80dp"
-        android:lineSpacingExtra="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small"
         android:outlineAmbientShadowColor="#1565C0"
         android:text="Welche davon möchtest du ausprobieren? Klick auf den zugehörigen Kreis!"
         android:textAlignment="center"
-        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
         android:id="@+id/lVSolutionList"
         android:layout_width="251dp"
-        android:layout_height="357dp"
-        android:layout_marginBottom="44dp"
+        android:layout_height="wrap_content"
         android:background="#B09494"
         android:foregroundTint="#BCA9A9"
         app:layout_constraintBottom_toTopOf="@+id/tVDecideForSolution"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVSolutionList" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

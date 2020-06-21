@@ -10,8 +10,7 @@
         android:id="@+id/tVAnotherSolution"
         android:layout_width="233dp"
         android:layout_height="72dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginTop="@dimen/biiig"
         android:text="Fällt dir noch etwas ein, das du tun könntest?"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -22,22 +21,23 @@
     <EditText
         android:id="@+id/eTAnotherSolution"
         android:layout_width="286dp"
-        android:layout_height="282dp"
-        android:layout_marginBottom="104dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/distance_text_top"
+        android:layout_marginBottom="@dimen/distance_text_top"
         android:ems="10"
-        android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/btnYes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVAnotherSolution" />
 
     <Button
         android:id="@+id/btnYes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="@dimen/distance_text_top"
         android:text="JA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnNo"
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="104dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="@dimen/distance_text_top"
         android:text="NEIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

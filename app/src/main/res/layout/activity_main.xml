@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        style="@style/TextViewStyleLogo"
         android:id="@+id/lblMindMirror"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

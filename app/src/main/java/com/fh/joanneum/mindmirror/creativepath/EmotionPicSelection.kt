@@ -41,6 +41,7 @@ class EmotionPicSelection : AppCompatActivity() {
         gridPicEmotions.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
                 CreativeSession.setPicture(parent.getItemAtPosition(position) as StorageReference)
+                CreativeSession.getPicture()
                 saveSelectedPic()
                 val intent = Intent(this, PictureExpression::class.java)
                 startActivity(intent)
