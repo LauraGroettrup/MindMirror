@@ -1,7 +1,7 @@
 package com.fh.joanneum.mindmirror.model
 
 object ConventionalSession {
-    private var emotions: MutableList<String> = mutableListOf("")
+    private var emotions = mutableListOf<String>()
 
     fun getEmotions(): List<String>{
         return emotions
