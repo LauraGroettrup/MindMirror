@@ -28,7 +28,7 @@ class EmotionPicSelection : AppCompatActivity() {
         getPicsFromFireStorage()
     }
 
-    fun showUI(){
+    fun showUI() {
         adapter = EmotionPicAdapter(this, imageUrlList)
         gridPicEmotions.adapter = adapter
 
@@ -36,7 +36,9 @@ class EmotionPicSelection : AppCompatActivity() {
             AdapterView.OnItemClickListener { parent, view, position, id ->
                 var pictureReference = parent.getItemAtPosition(position) as StorageReference
                 CreativeSession.setPicture(pictureReference.name)
-                Toast.makeText(baseContext, "Picture was saved as Uri to Model." + CreativeSession.getPicture().toString(),
+                Toast.makeText(
+                    baseContext,
+                    "Picture was saved as Uri to Model." + CreativeSession.getPicture().toString(),
                     Toast.LENGTH_SHORT
                 ).show()
                 val intent = Intent(this, PictureExpression::class.java)

@@ -59,6 +59,10 @@ class EarlyEnd : AppCompatActivity() {
         }
 
         btnBackToMain.setOnClickListener {
+            Firebase.auth.signOut()
+            Toast.makeText(baseContext, "You are logged out.",
+                Toast.LENGTH_SHORT
+            ).show()
             val intent = Intent(this, MainActivity::class.java)
            startActivity(intent)
         }
