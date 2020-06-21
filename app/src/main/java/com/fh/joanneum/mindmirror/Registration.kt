@@ -19,12 +19,11 @@ class Registration : AppCompatActivity() {
 
     private fun checkForm() {
         initialiseUser()
-        if (User.getEmail().equals("") || User.getNickname().equals("") || User.getPassword()
-                .equals("") || User.getUsername().equals("")
-        ){
+        if (User.getEmail().equals("") || User.getUsername().equals("") || User.getPassword()
+                .equals("")
+        ) {
             Log.e("Error", "Please fill out all fields")
-        }
-        else {
+        } else {
             val intent = Intent(this, RegistrationConfirmation::class.java)
             startActivity(intent)
         }
@@ -34,6 +33,5 @@ class Registration : AppCompatActivity() {
         User.setUsername(editEnterUsername.text.toString())
         User.setEmail(editEnterEmail.text.toString())
         User.setPassword(editEnterPasswort.text.toString())
-        User.setNickname(editEnterName.text.toString())
     }
 }

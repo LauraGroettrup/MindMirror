@@ -16,7 +16,7 @@ class EarlyEnd : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.early_end)
 
-        lblGoodbye.text= getString(R.string.goodbye, User.getNickname())
+        lblGoodbye.text= getString(R.string.goodbye, User.getUsername())
 
         btnBackToMain.setOnClickListener {
             val intent = Intent(this, PathSelection::class.java)

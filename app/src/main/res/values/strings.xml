@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">MindMirror</string>
-    <string name="enter_username">Bitte gib einen Usernamen an:</string>
     <string name="enter_password">Bitte gib ein Password ein:</string>
     <string name="enter_password_hint">Mindestens 8 Zeichen mit einer Zahl und einem Sonderzeichen.</string>
+    <string name="repeat_passowrt">Bitte wiederhole dein Passwort:</string>
     <string name="enter_password_warning">Dieses Passwort entspricht nicht den Anforderungen!</string>
     <string name="enter_email">Bitte gib eine Email Adresse an:</string>
     <string name="enter_name">Wie möchtest du angesprochen werden?</string>

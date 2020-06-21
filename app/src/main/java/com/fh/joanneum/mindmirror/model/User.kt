@@ -2,7 +2,6 @@ object User {
     private var username: String = ""
     private var password: String = ""
     private var email: String = ""
-    private var nickname: String = ""
 
     fun getUsername():String{
         return username
@@ -23,13 +22,6 @@ object User {
     }
     fun setEmail(email:String){
         this.email = email
-    }
-
-    fun getNickname():String{
-        return nickname
-    }
-    fun setNickname(nickname:String){
-        this.nickname = nickname
     }
 }
 

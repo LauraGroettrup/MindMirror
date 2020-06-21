@@ -6,13 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/editRepeatPasswort"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small"
+        android:autofillHints="password"
+        android:ems="10"
+        android:hint="@string/enter_password_hint"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblRepeatPasswort" />
+
     <TextView
         android:id="@+id/lblEnterUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_text_top"
         android:labelFor="@id/editEnterUsername"
-        android:text="@string/enter_username"
+        android:text="@string/enter_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,12 +51,12 @@
         android:text="@string/enter_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEnterUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/editEnterEmail" />
 
     <EditText
         android:id="@+id/editEnterPasswort"
-        android:layout_width="208dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/small"
         android:autofillHints="password"
         android:ems="10"
@@ -62,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEnterPasswort" />
+        app:layout_constraintTop_toBottomOf="@+id/editEnterUsername" />
 
     <EditText
         android:id="@+id/editEnterEmail"
@@ -73,32 +87,9 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblEnterEmail" />
-
-    <TextView
-        android:id="@+id/lblEnterName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium"
-        android:labelFor="@id/editEnterName"
-        android:text="@string/enter_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEnterEmail" />
-
-    <EditText
-        android:id="@+id/editEnterName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/small"
-        android:autofillHints="username"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblEnterName"
-        android:imeOptions="actionDone"/>
 
     <Button
         android:id="@+id/btnRegister"
@@ -107,7 +98,16 @@
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/lblRepeatPasswort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/repeat_passowrt"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEnterName" />
+        app:layout_constraintTop_toBottomOf="@+id/editEnterPasswort" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

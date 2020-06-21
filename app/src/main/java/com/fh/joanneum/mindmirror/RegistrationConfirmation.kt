@@ -12,7 +12,7 @@ class RegistrationConfirmation : AppCompatActivity() {
         setContentView(R.layout.registration_confirmation)
 
 
-        lblEmail.setText(getString(R.string.welcome, User.getNickname()))
+        lblEmail.setText(getString(R.string.welcome, User.getUsername()))
 
         btnToLogin.setOnClickListener {
             val intent = Intent(this, Login::class.java)
