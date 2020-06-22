@@ -18,9 +18,12 @@ object ConventionalSession {
     fun emotionsToString(): String{
         var emotionsAsString = ""
         for (emotion in emotions){
-            emotionsAsString = emotionsAsString + emotion + ","
+            emotionsAsString = emotionsAsString + emotion + ", "
         }
-        return emotionsAsString
+        return emotionsAsString.dropLast(2)
     }
 
+    fun clear() {
+        emotions.clear()
+    }
 }

@@ -22,4 +22,9 @@ object CreativeSession {
     fun setAnswer2(answer: String){
         this.picExpression = answer
     }
+
+    fun clear(){
+        picExpression = ""
+        picture = ""
+    }
 }

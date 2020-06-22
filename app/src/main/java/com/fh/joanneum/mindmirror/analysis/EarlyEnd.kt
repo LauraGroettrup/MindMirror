@@ -9,6 +9,7 @@ import com.fh.joanneum.mindmirror.MainActivity
 import com.fh.joanneum.mindmirror.PathSelection
 import com.fh.joanneum.mindmirror.R
 import com.fh.joanneum.mindmirror.model.Analysis
+import com.fh.joanneum.mindmirror.model.ConventionalSession
 import com.fh.joanneum.mindmirror.model.User
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
@@ -26,51 +27,15 @@ class EarlyEnd : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.early_end)
-
         lblGoodbye.text = getString(R.string.goodbye, User.getUsername())
-
-        fun saveSelectedPic() {
-            var selectedPic = CreativeSession.getPicture()
-            picMap.put("selected Pic", selectedPic)
-            sessionDocRef.set(picMap)
-                .addOnSuccessListener {
-                    Log.d("Selected Pic", "Pic has been saved.")}
-                .addOnFailureListener {
-                    Log.d("Selected Pic", "Document was not saved")
-            }
-        }
-
-        fun saveSessionData(){
-            val session = hashMapOf(
-                "picture" to CreativeSession.getPicture(),
-                "picExpression" to CreativeSession.getPicExpression(),
-                "situation" to Analysis.getSituation(),
-                "changeMood" to Analysis.getChangeMood(),
-                "chosenSolution" to Analysis.getChosenSolution(),
-                "solutions" to  Analysis.getSolutions()
-            )
-            db.collection("sessions")
-                .add(session)
-                .addOnSuccessListener { documentReference ->
-                    Log.d("Message", "DocumentSnapShot added with ID: ${documentReference.id}")
-                }
-                .addOnFailureListener{e ->
-                    Log.w("Message", "Error adding document", e)
-                }
-        }
+        saveSessionData()
 
         btnBackToMain.setOnClickListener {
-            Firebase.auth.signOut()
-            Toast.makeText(baseContext, "You are logged out.",
-                Toast.LENGTH_SHORT
-            ).show()
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, PathSelection::class.java)
            startActivity(intent)
         }
 
         btnLogout.setOnClickListener {
-            //saveSelectedPic()
-            saveSessionData()
             Firebase.auth.signOut()
             Toast.makeText(baseContext, "You are logged out.",
             Toast.LENGTH_SHORT
@@ -78,6 +43,30 @@ class EarlyEnd : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    fun saveSessionData(){
+        val session = hashMapOf(
+            "situation" to Analysis.getSituation(),
+            "changeMood" to Analysis.getChangeMood(),
+            "chosenSolution" to Analysis.getChosenSolution(),
+            "solutions" to  Analysis.getSolutions()
+        )
+        if (!CreativeSession.getPicture().equals("")){
+            session.put("picture",CreativeSession.getPicture())
+            session.put("picExpression",CreativeSession.getPicExpression())
+        } else {
+            session.put("emotions",ConventionalSession.getEmotions())
+        }
+
+        db.collection("sessions")
+            .add(session)
+            .addOnSuccessListener { documentReference ->
+                Log.d("Message", "DocumentSnapShot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener{e ->
+                Log.e("Message", "Error adding document", e)
+            }
     }
 }
 

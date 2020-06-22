@@ -41,7 +41,7 @@ object Analysis {
     fun clear(){
         situation = ""
         changeMood = false
-        solutions = mutableListOf("")
+        solutions.clear()
         chosenSolution = ""
     }
 }
