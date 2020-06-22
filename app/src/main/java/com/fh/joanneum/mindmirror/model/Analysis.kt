@@ -3,7 +3,7 @@ package com.fh.joanneum.mindmirror.model
 object Analysis {
     private var situation: String = ""
     private var changeMood: Boolean = false
-    private var solutions: MutableList<String> = mutableListOf("")
+    private var solutions = mutableListOf<String>()
     private var chosenSolution: String = ""
 
     fun setSituation(events_: String){

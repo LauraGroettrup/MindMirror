@@ -9,6 +9,7 @@ import com.fh.joanneum.mindmirror.MainActivity
 import com.fh.joanneum.mindmirror.PathSelection
 import com.fh.joanneum.mindmirror.R
 import com.fh.joanneum.mindmirror.model.Analysis
+import com.fh.joanneum.mindmirror.model.ConventionalSession
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -28,36 +29,36 @@ class End : AppCompatActivity() {
         var chosenSolution = Analysis.getChosenSolution()
         //textView setText
         lblOptions.text = chosenSolution
+        // save sessionData to DB
+        saveSessionData()
 
-        //save data to DB
-        fun saveSessionData(){
-            val session = hashMapOf(
-                "picture" to CreativeSession.getPicture(),
-                "picExpression" to CreativeSession.getPicExpression(),
-                "situation" to Analysis.getSituation(),
-                "changeMood" to Analysis.getChangeMood(),
-                "chosenSolution" to Analysis.getChosenSolution(),
-                "solutions" to  Analysis.getSolutions()
-            )
-            db.collection("sessions")
-                .add(session)
-                .addOnSuccessListener { documentReference ->
-                    Log.d("Message", "DocumentSnapShot added with ID: ${documentReference.id}")
-                }
-                .addOnFailureListener{e ->
-                    Log.w("Message", "Error adding document", e)
-                }
-        }
         btnBackToMain.setOnClickListener {
-            saveSessionData()
-            Firebase.auth.signOut()
-            Toast.makeText(baseContext, "You are logged out.",
-                Toast.LENGTH_SHORT
-            ).show()
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, PathSelection::class.java)
             startActivity(intent)
         }
+    }
 
-
+    fun saveSessionData(){
+        val session = hashMapOf(
+            "situation" to Analysis.getSituation(),
+            "changeMood" to Analysis.getChangeMood(),
+            "chosenSolution" to Analysis.getChosenSolution(),
+            "solutions" to  Analysis.getSolutions()
+        )
+        if (!CreativeSession.getPicture().equals("")){
+            session.put("picture",CreativeSession.getPicture())
+            session.put("picExpression",CreativeSession.getPicExpression())
+        } else {
+            session.put("emotions", ConventionalSession.getEmotions())
+        }
+        
+        db.collection("users").document(Firebase.auth.currentUser!!.uid).collection("sessions")
+            .add(session)
+            .addOnSuccessListener { documentReference ->
+                Log.d("Message", "DocumentSnapShot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener{e ->
+                Log.e("Message", "Error adding document", e)
+            }
     }
 }
