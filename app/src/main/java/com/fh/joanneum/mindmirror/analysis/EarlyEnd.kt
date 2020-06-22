@@ -21,7 +21,7 @@ class EarlyEnd : AppCompatActivity() {
 
     var picMap: MutableMap<String, String> = mutableMapOf()
     val db = Firebase.firestore
-    var sessionDocRef: DocumentReference = FirebaseFirestore.getInstance().document("sessions/session")
+    var sessionDocRef: DocumentReference = FirebaseFirestore.getInstance().document("users/user/sessions/session")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
