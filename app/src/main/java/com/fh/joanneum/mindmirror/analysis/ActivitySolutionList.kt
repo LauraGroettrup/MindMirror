@@ -13,6 +13,7 @@ class ActivitySolutionList () : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solution_list)
 
+        //get data
         var items = Analysis.getSolutions()
 
         //adapter
@@ -23,6 +24,8 @@ class ActivitySolutionList () : AppCompatActivity() {
 
         //connect adapter to ListView
         listView.setAdapter(solutionsAdapter)
+
+
 
         listView.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
