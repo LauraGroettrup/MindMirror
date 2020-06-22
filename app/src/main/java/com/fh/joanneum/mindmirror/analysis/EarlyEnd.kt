@@ -12,6 +12,7 @@ import com.fh.joanneum.mindmirror.model.Analysis
 import com.fh.joanneum.mindmirror.model.ConventionalSession
 import com.fh.joanneum.mindmirror.model.User
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -59,7 +60,9 @@ class EarlyEnd : AppCompatActivity() {
             session.put("emotions",ConventionalSession.getEmotions())
         }
 
-        db.collection("sessions")
+
+
+        db.collection("users").document(Firebase.auth.currentUser!!.uid).collection("sessions")
             .add(session)
             .addOnSuccessListener { documentReference ->
                 Log.d("Message", "DocumentSnapShot added with ID: ${documentReference.id}")
