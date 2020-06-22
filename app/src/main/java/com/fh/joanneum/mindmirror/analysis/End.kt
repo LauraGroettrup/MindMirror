@@ -3,6 +3,8 @@ package com.fh.joanneum.mindmirror.analysis
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.MainActivity
@@ -51,7 +53,7 @@ class End : AppCompatActivity() {
         } else {
             session.put("emotions", ConventionalSession.getEmotions())
         }
-        
+
         db.collection("users").document(Firebase.auth.currentUser!!.uid).collection("sessions")
             .add(session)
             .addOnSuccessListener { documentReference ->
@@ -61,4 +63,22 @@ class End : AppCompatActivity() {
                 Log.e("Message", "Error adding document", e)
             }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.appmenu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.actionLogout -> {
+                Firebase.auth.signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 }

@@ -10,4 +10,5 @@ class ActivityPictureExpression : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.picture_expression)
     }
+
 }
