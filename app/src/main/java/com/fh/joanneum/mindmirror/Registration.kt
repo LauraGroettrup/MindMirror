@@ -5,13 +5,16 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.fh.joanneum.mindmirror.model.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.registration.*
+import java.lang.Exception
 
 class Registration : AppCompatActivity() {
 
@@ -33,6 +36,7 @@ class Registration : AppCompatActivity() {
         ) {
             Log.e("Error", "Please fill out all fields")
         } else {
+            User.setUsername(editEnterUsername.text.toString())
             registerUser()
         }
     }
@@ -44,7 +48,7 @@ class Registration : AppCompatActivity() {
             editEnterPasswort.text.toString()
         ).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
-                goToLogin()
+                goToLogin(auth.currentUser)
             } else {
                 Toast.makeText(
                     baseContext, "Registration failed.",
@@ -54,20 +58,17 @@ class Registration : AppCompatActivity() {
         }
     }
 
-    fun goToLogin() {
-
-        var dataToSave: HashMap<String, Any> = HashMap<String, Any>()
-        var userReference: DocumentReference = usersReference.document("user1")
-        dataToSave.put("username", editEnterUsername.text.toString())
-        dataToSave.put("email", editEnterEmail.text.toString())
-        dataToSave.put("password", editEnterPasswort.text.toString())
-        userReference.set(dataToSave).addOnSuccessListener {
-            Log.d("DATABASE", "Logged the user")
+    fun goToLogin(currentUser: FirebaseUser?) {
+        var userToSave: HashMap<String, Any> = HashMap<String, Any>()
+        var userReference: DocumentReference = usersReference.document(currentUser!!.uid)
+        userToSave.put("username", editEnterUsername.text.toString())
+        userToSave.put("email", editEnterEmail.text.toString())
+        userToSave.put("password", editEnterPasswort.text.toString())
+        userReference.set(userToSave).addOnSuccessListener {
+            Log.d("DATABASE", "Saved the user in DB under " + currentUser!!.uid)
             val intent = Intent(this, RegistrationConfirmation::class.java)
             startActivity(intent)
-        }
-        val intent = Intent(this, RegistrationConfirmation::class.java)
-        startActivity(intent)
+        }.addOnFailureListener{ exception: Exception -> Log.e("LOGIN", exception.toString()) }
     }
 
 

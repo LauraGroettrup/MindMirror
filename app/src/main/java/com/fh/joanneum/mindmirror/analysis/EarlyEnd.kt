@@ -9,6 +9,7 @@ import com.fh.joanneum.mindmirror.MainActivity
 import com.fh.joanneum.mindmirror.PathSelection
 import com.fh.joanneum.mindmirror.R
 import com.fh.joanneum.mindmirror.model.Analysis
+import com.fh.joanneum.mindmirror.model.User
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
