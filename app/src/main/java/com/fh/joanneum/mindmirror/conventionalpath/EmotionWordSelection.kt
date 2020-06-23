@@ -25,6 +25,8 @@ class EmotionWordSelection : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.word_selection)
 
+        ConventionalSession.clear()
+
         adapter =
             EmotionWordAdapter(this)
         gridWordEmotions.adapter = adapter
