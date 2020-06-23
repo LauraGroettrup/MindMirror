@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_text_top"
-        android:text="Dieser Zugang erfolgt über unser Unterbewusstsein und ist besonders für Personen, die sich bisher noch kaum mir ihren Gefühlen auseinandergesetzt haben, zu empfehlen. Er ermutigt uns, unserem Bauchgefühl zu folgen, das in Bruchteilen von Sekunden meist mehr weiß, als wir rational erfassen können."
+        android:text="Dieser Zugang erfolgt über unser Unterbewusstsein. Er ermutigt uns, unserem Bauchgefühl zu folgen, das in Bruchteilen von Sekunden oft mehr erfassen kann, als wir das mit unserem Verstand können."
         android:textAlignment="center"
         android:textColor="#E5000000"
         app:layout_constraintEnd_toEndOf="parent"

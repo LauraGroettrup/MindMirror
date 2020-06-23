@@ -11,7 +11,7 @@
     <string name="registration_description">Schön, dass du dich hier angemeldet hast. \nMindMirror ermöglicht es dir, dich selber besser kennenzulernen und deine Gefühle besser zu verstehen. Dadurch kannst du langfristig selbst bestimmen, wie du mit ihnen umgehst.</string>
     <string name="login">Login</string>
     <string name="login_name_or_email">Bitte gebe deinen Username oder deine Email an:</string>
-    <string name="login_password">Bitte gebe dein Passwort ein</string>
+    <string name="login_password">Bitte gebe dein Passwort ein:</string>
     <string name="logo">Logo</string>
     <string name="hello">Hallo %1$s!</string>
     <string name="wellbeing">Ich freue mich, dich bei der Erforschung deiner Emotionen begleiten zu dürfen. Gemeinsam werden wir entdecken, was dich bewegt, warum das so ist und welche Handlungsmöglichkeiten du hast.</string>
