@@ -45,4 +45,5 @@ class EmotionPicAdapter : BaseAdapter {
         return emotionView
     }
 
+
 }

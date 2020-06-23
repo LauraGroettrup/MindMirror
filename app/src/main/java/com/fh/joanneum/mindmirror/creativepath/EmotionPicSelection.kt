@@ -3,10 +3,14 @@ package com.fh.joanneum.mindmirror.creativepath
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.AdapterView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.fh.joanneum.mindmirror.MainActivity
 import com.fh.joanneum.mindmirror.R
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -37,11 +41,6 @@ class EmotionPicSelection : AppCompatActivity() {
 
                 var pictureReference = parent.getItemAtPosition(position) as StorageReference
                 CreativeSession.setPicture(pictureReference.name)
-                Toast.makeText(
-                    baseContext,
-                    "Picture was saved as Uri to Model." + CreativeSession.getPicture().toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
 
                 val intent = Intent(this, PictureExpression::class.java)
                 startActivity(intent)
@@ -61,6 +60,23 @@ class EmotionPicSelection : AppCompatActivity() {
             showUI()
         }?.addOnFailureListener {
             Log.e("Storage", it.toString())
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.appmenu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.actionLogout -> {
+                Firebase.auth.signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

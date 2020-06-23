@@ -3,6 +3,8 @@ package com.fh.joanneum.mindmirror.analysis
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.MainActivity
@@ -36,14 +38,6 @@ class EarlyEnd : AppCompatActivity() {
            startActivity(intent)
         }
 
-        btnLogout.setOnClickListener {
-            Firebase.auth.signOut()
-            Toast.makeText(baseContext, "You are logged out.",
-            Toast.LENGTH_SHORT
-            ).show()
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     fun saveSessionData(){
@@ -71,5 +65,23 @@ class EarlyEnd : AppCompatActivity() {
                 Log.e("Message", "Error adding document", e)
             }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.appmenu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.actionLogout -> {
+                Firebase.auth.signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 }
 

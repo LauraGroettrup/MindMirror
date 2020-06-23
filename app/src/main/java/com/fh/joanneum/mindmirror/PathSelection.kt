@@ -9,6 +9,11 @@ import com.fh.joanneum.mindmirror.model.Analysis
 import com.fh.joanneum.mindmirror.model.ConventionalSession
 import com.fh.joanneum.mindmirror.model.User
 import kotlinx.android.synthetic.main.path_selection.*
+import android.view.Menu
+import android.view.MenuItem
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class PathSelection : AppCompatActivity() {
 
@@ -28,7 +33,25 @@ class PathSelection : AppCompatActivity() {
             startActivity(intent)
         }
     }
-     fun cleanSessions(){
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.appmenu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.actionLogout -> {
+                Firebase.auth.signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    fun cleanSessions(){
          ConventionalSession.clear()
          CreativeSession.clear()
          Analysis.clear()
