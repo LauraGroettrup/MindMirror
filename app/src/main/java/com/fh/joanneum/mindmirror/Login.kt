@@ -36,11 +36,22 @@ class Login : AppCompatActivity() {
             setContentView(R.layout.login)
             email = findViewById(R.id.editEmail)
             password = findViewById(R.id.editPassword)
+
             btnLogin.setOnClickListener {
-                auth.signInWithEmailAndPassword(email?.text.toString(), password?.text.toString())
-                    .addOnSuccessListener { result ->
-                        login()
-                    }.addOnFailureListener { exception -> Log.e("LOGIN", exception.toString()) }
+                if (email?.text.toString().equals("") || password?.text.toString().equals("")) {
+                    lblLoginError.visibility = View.VISIBLE
+                } else {
+                    auth.signInWithEmailAndPassword(
+                        email?.text.toString(),
+                        password?.text.toString()
+                    )
+                        .addOnSuccessListener { result ->
+                            login()
+                        }.addOnFailureListener { exception ->
+                            Log.e("LOGIN", exception.toString())
+                            lblLoginError.visibility = View.VISIBLE
+                        }
+                }
             }
         }
     }

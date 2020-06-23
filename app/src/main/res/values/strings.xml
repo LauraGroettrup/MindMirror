@@ -39,5 +39,7 @@
     <string name="good_luck">Viel Glück dabei!</string>
     <string name="options">Handlungsmöglichkeiten</string>
     <string name="logout">Logout</string>
+    <string name="loginError">User konnte nicht gefunden werden. \nBitte registriere dich zuerst, wenn du noch kein Konto hast.</string>
+    <string name="registrationError">Bei der Registration ist etwas schief gegangen: </string>
 
 </resources>
