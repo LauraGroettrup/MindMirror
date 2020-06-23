@@ -2,7 +2,10 @@ package com.fh.joanneum.mindmirror
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
+import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.model.User
@@ -14,7 +17,7 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.registration.*
-import java.lang.Exception
+
 
 class Registration : AppCompatActivity() {
 
@@ -31,10 +34,27 @@ class Registration : AppCompatActivity() {
     }
 
     private fun checkForm() {
-        if (editEnterUsername.text.toString().equals("") || editEnterEmail.text.equals("") ||
-            editRepeatPasswort.text.equals("") || editEnterPasswort.text.equals("")
-        ) {
-            Log.e("Error", "Please fill out all fields")
+        val errorMsg = getResources().getString(R.string.registrationError)
+        if (editEnterUsername.text.toString().equals("")) {
+            lblRegistrationError.text =
+                errorMsg + " Username darf nicht leer sein "
+            lblRegistrationError.visibility= View.VISIBLE
+        } else if (editEnterEmail.text.toString().equals("")) {
+            lblRegistrationError.text =
+                errorMsg + "Email darf nicht leer sein "
+            lblRegistrationError.visibility= View.VISIBLE
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(editEnterEmail.text.toString()).matches()) {
+            lblRegistrationError.text =
+                errorMsg + "Email ist nicht gültig "
+            lblRegistrationError.visibility= View.VISIBLE
+        } else if (editEnterPasswort.text.toString().equals("")) {
+            lblRegistrationError.text =
+                errorMsg + "Passwort darf nicht leer sein "
+            lblRegistrationError.visibility= View.VISIBLE
+        } else if (!editEnterPasswort.text.toString().equals(editRepeatPasswort.text.toString())) {
+            lblRegistrationError.text =
+                errorMsg + "Nicht das gleiche Passwort"
+            lblRegistrationError.visibility= View.VISIBLE
         } else {
             User.setUsername(editEnterUsername.text.toString())
             registerUser()
@@ -58,7 +78,7 @@ class Registration : AppCompatActivity() {
         }
     }
 
-    fun goToLogin(currentUser: FirebaseUser?) {
+    private fun goToLogin(currentUser: FirebaseUser?) {
         var userToSave: HashMap<String, Any> = HashMap<String, Any>()
         var userReference: DocumentReference = usersReference.document(currentUser!!.uid)
         userToSave.put("username", editEnterUsername.text.toString())
@@ -68,7 +88,7 @@ class Registration : AppCompatActivity() {
             Log.d("DATABASE", "Saved the user in DB under " + currentUser!!.uid)
             val intent = Intent(this, RegistrationConfirmation::class.java)
             startActivity(intent)
-        }.addOnFailureListener{ exception: Exception -> Log.e("LOGIN", exception.toString()) }
+        }.addOnFailureListener { exception: Exception -> Log.e("LOGIN", exception.toString()) }
     }
 
 

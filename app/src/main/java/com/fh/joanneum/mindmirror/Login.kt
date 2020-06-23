@@ -3,6 +3,7 @@ package com.fh.joanneum.mindmirror
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -35,11 +36,22 @@ class Login : AppCompatActivity() {
             setContentView(R.layout.login)
             email = findViewById(R.id.editEmail)
             password = findViewById(R.id.editPassword)
+
             btnLogin.setOnClickListener {
-                auth.signInWithEmailAndPassword(email?.text.toString(), password?.text.toString())
-                    .addOnSuccessListener { result ->
-                        login()
-                    }.addOnFailureListener { exception -> Log.e("LOGIN", exception.toString()) }
+                if (email?.text.toString().equals("") || password?.text.toString().equals("")) {
+                    lblLoginError.visibility = View.VISIBLE
+                } else {
+                    auth.signInWithEmailAndPassword(
+                        email?.text.toString(),
+                        password?.text.toString()
+                    )
+                        .addOnSuccessListener { result ->
+                            login()
+                        }.addOnFailureListener { exception ->
+                            Log.e("LOGIN", exception.toString())
+                            lblLoginError.visibility = View.VISIBLE
+                        }
+                }
             }
         }
     }
