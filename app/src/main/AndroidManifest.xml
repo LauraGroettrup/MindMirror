@@ -33,7 +33,7 @@
         <activity android:name=".creativepath.PictureExpression"
             android:parentActivityName= ".creativepath.EmotionPicSelection" />
         <activity android:name=".analysis.SituationAnalysis"
-            android:parentActivityName= ".creativepath.PictureExpression" />
+            android:parentActivityName=".creativepath.EmotionPicSelection" />
         <activity android:name=".analysis.Cross"
             android:parentActivityName= ".analysis.SituationAnalysis" />
         <activity android:name=".analysis.SolutionFinding1"

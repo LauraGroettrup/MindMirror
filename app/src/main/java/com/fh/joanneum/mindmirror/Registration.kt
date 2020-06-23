@@ -3,6 +3,7 @@ package com.fh.joanneum.mindmirror
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.model.User
@@ -69,6 +70,16 @@ class Registration : AppCompatActivity() {
             val intent = Intent(this, RegistrationConfirmation::class.java)
             startActivity(intent)
         }.addOnFailureListener{ exception: Exception -> Log.e("LOGIN", exception.toString()) }
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            window.decorView.systemUiVisibility = (
+                    View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+        }
     }
 
 

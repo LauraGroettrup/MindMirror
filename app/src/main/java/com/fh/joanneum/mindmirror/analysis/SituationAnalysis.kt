@@ -4,10 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.MainActivity
 import com.fh.joanneum.mindmirror.R
+import com.fh.joanneum.mindmirror.conventionalpath.EmotionWordSelection
+import com.fh.joanneum.mindmirror.creativepath.PictureExpression
 import com.fh.joanneum.mindmirror.model.Analysis
 import com.fh.joanneum.mindmirror.model.ConventionalSession
 import com.google.firebase.auth.ktx.auth
@@ -50,6 +53,17 @@ class SituationAnalysis : AppCompatActivity() {
         return true
     }
 
+    override fun onBackPressed() {
+        if (!CreativeSession.getPicture().equals("")){
+            val intent = Intent(this, PictureExpression::class.java)
+            startActivity(intent)
+
+        } else {
+            val intent = Intent(this, EmotionWordSelection::class.java)
+            startActivity(intent)
+        }
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.actionLogout -> {
@@ -59,6 +73,16 @@ class SituationAnalysis : AppCompatActivity() {
                 return true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            window.decorView.systemUiVisibility = (
+                    View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
         }
     }
 }

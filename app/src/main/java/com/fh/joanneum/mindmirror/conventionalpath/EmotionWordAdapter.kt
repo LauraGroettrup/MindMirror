@@ -63,4 +63,6 @@ class EmotionWordAdapter : BaseAdapter {
 
         return emotionView
     }
+
+
 }
