@@ -29,7 +29,6 @@ class Login : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
-
         if (auth.currentUser != null) {
             login()
         } else {

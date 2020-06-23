@@ -16,20 +16,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login" />
-        <activity android:name=".Registration" />
-        <activity android:name=".RegistrationConfirmation" />
+        <activity android:name=".Login"
+            android:parentActivityName= ".MainActivity" />
+        <activity android:name=".Registration"
+            android:parentActivityName= ".MainActivity" />
+        <activity android:name=".RegistrationConfirmation"
+            android:parentActivityName= ".Registration" />
         <activity android:name=".PathSelection" />
-        <activity android:name=".conventionalpath.ConventionalStart" />
-        <activity android:name=".conventionalpath.EmotionWordSelection" />
-        <activity android:name=".creativepath.CreativeStart" />
-        <activity android:name=".creativepath.EmotionPicSelection" />
-        <activity android:name=".creativepath.PictureExpression" />
-        <activity android:name=".analysis.SituationAnalysis" />
-        <activity android:name=".analysis.Cross" />
-        <activity android:name=".analysis.SolutionFinding1" />
-        <activity android:name=".analysis.SolutionFinding2" />
-        <activity android:name=".analysis.ActivitySolutionList" />
+        <activity android:name=".conventionalpath.ConventionalStart"
+            android:parentActivityName= ".PathSelection" />
+        <activity android:name=".conventionalpath.EmotionWordSelection"
+            android:parentActivityName= ".conventionalpath.ConventionalStart" />
+        <activity android:name=".creativepath.CreativeStart"
+            android:parentActivityName= ".PathSelection" />
+        <activity android:name=".creativepath.EmotionPicSelection"
+            android:parentActivityName= ".creativepath.CreativeStart" />
+        <activity android:name=".creativepath.PictureExpression"
+            android:parentActivityName= ".creativepath.EmotionPicSelection" />
+        <activity android:name=".analysis.SituationAnalysis"
+            android:parentActivityName= ".creativepath.PictureExpression" />
+        <activity android:name=".analysis.Cross"
+            android:parentActivityName= ".analysis.SituationAnalysis" />
+        <activity android:name=".analysis.SolutionFinding1"
+            android:parentActivityName= ".analysis.Cross" />
+        <activity android:name=".analysis.SolutionFinding2"
+            android:parentActivityName= ".analysis.SolutionFinding1" />
+        <activity android:name=".analysis.ActivitySolutionList"
+            android:parentActivityName= ".analysis.SolutionFinding2" />
         <activity android:name=".analysis.EarlyEnd" />
         <activity android:name=".analysis.End" />
     </application>

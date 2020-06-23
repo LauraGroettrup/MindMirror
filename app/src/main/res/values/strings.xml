@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">MindMirror</string>
-    <string name="enter_password">Bitte gib ein Password ein:</string>
+    <string name="enter_password">Bitte gib ein Passwort ein:</string>
     <string name="enter_password_hint">Mindestens 8 Zeichen mit einer Zahl und einem Sonderzeichen.</string>
     <string name="repeat_passowrt">Bitte wiederhole dein Passwort:</string>
     <string name="enter_password_warning">Dieses Passwort entspricht nicht den Anforderungen!</string>
-    <string name="enter_email">Bitte gib eine Email Adresse an:</string>
+    <string name="enter_email">Bitte gib eine Email-Adresse an:</string>
     <string name="enter_name">Wie möchtest du angesprochen werden?</string>
     <string name="register">Registrieren</string>
     <string name="welcome">Willkommen %1$s!</string>
@@ -14,28 +14,28 @@
     <string name="login_password">Bitte gebe dein Passwort ein</string>
     <string name="logo">Logo</string>
     <string name="hello">Hallo %1$s!</string>
-    <string name="wellbeing">Na, wie läuft\'s so?</string>
-    <string name="choose_path_question">Ich möchte heute folgenden Weg wählen:</string>
-    <string name="creativ">Kreativ</string>
+    <string name="wellbeing">Ich freue mich, dich bei der Erforschung deiner Emotionen begleiten zu dürfen. Gemeinsam werden wir entdecken, was dich bewegt, warum das so ist und welche Handlungsmöglichkeiten du hast.</string>
+    <string name="choose_path_question">Welchen Zugang möchtest du wählen?</string>
+    <string name="creativ">Intuitiv</string>
     <string name="conventional">Konventionell</string>
     <string name="start">Start</string>
-    <string name="conventionalDesciption">Du möchtest heute allso deine Stimmung mit Worten ausdrücken?\nEs ist hilfreich für das Gespräch mit anderen sowie für einen selbst seine Stimmung ausdrücken zu können. Mal schaun ob wir es schaffen deine Emotionen in Worte zu fassen!</string>
+    <string name="conventionalDesciption">Alles klar, du möchtest dem konventionellen Pfad folgen. Hierbei geht es darum, seine Stimmung mit Worten auszudrücken. \n\n Dies ist eine Fähigkeit, die ungemein wichtig für unser soziales Zusammenleben ist. Es ist nützlich, sie regelmäßig zu trainieren.</string>
     <string name="choose_words_description">Wähle ein oder mehrere Adjektive, die deine momentane Laune repräsentieren.</string>
     <string name="resume_with_word_selection">Auswahl bestätigen</string>
     <string name="emotion">Emotion</string>
-    <string name="choose_picture_description">Wie geht es dir gerade? \nBitte wähle jenes Bild aus, das deine Stimmung am ehesten ausdrückt.</string>
+    <string name="choose_picture_description">Wie geht es dir gerade? \nBitte wähle spontan jenes Bild aus, das deine Stimmung am ehesten ausdrückt.</string>
     <string name="emotion_selection">Du hast Emotionen gewählt: %1$s\nMöchtest du mit dieser Auswahl fortfahren?</string>
     <string name="back_to_selection">Auswahl bearbeiten</string>
     <string name="next">Weiter</string>
-    <string name="early_end_description">Alles klar, du möchtest deine Stimmung nicht verändern.\n
-        Dann hoffe ich, dass es dir gut geht oder du du dich bewusst mit deiner Stimmung auseinandersetzten mächtest, weil du es gerade für sinnvoll empfindest.\n
-        Schön, dass du dich aktiv mit deinen Emotionen auseinander setzt :)
+    <string name="early_end_description">Ich verstehe, du möchtest deine Stimmung nicht verändern.\n \n
+        Dann hoffe ich, dass alles in Ordnung ist oder du dich bewusst mit deiner Stimmung auseinandersetzten möchtest, weil du es gerade für sinnvoll hältst.\n\n
+        Schön, dass du dich aktiv mit deinen Emotionen beschäftigst :)
     </string>
     <string name="goodbye">Bis zum nächsten Mal, %1$s!</string>
     <string name="back_to_main">Zurück zum Hauptmenü</string>
     <string name="end">Super!\nDu hast dich mit deinen Emotionen und ihren Gründen auseinandergesetzt. Außerdem hast du aktiv überlegt, wie du deine Stimmung verändern kannst.
      Dies wird dich langfristig widerstandsfähiger gegen äußere Einflüsse machen und dich dazu befähigen, dein Leben selbst bestimmt zu gestalten.\n
-    Probiere nun folgende Möglichkeiten aus, um dich in eine andere Stimmung zu versetzten:</string>
+    Probiere nun folgende Möglichkeiten aus, um dich in eine andere Stimmung zu versetzen:</string>
     <string name="good_luck">Viel Glück dabei!</string>
     <string name="options">Handlungsmöglichkeiten</string>
     <string name="photo">Füge ein eigenes Bild von deinem Gerät hinzu</string>
