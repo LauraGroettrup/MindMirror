@@ -70,10 +70,9 @@ class Registration : AppCompatActivity() {
             if (task.isSuccessful) {
                 goToLogin(auth.currentUser)
             } else {
-                Toast.makeText(
-                    baseContext, "Registration failed.",
-                    Toast.LENGTH_SHORT
-                ).show()
+                lblRegistrationError.text =
+                    "Registrierung fehlgeschlagen. Falls du bereits ein Konto hast, log dich bitte ein."
+                lblRegistrationError.visibility= View.VISIBLE
             }
         }
     }
