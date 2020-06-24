@@ -48,6 +48,7 @@
         android:layout_marginBottom="96dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/btnToLogin"
-        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/registration_description" />
 </androidx.constraintlayout.widget.ConstraintLayout>
