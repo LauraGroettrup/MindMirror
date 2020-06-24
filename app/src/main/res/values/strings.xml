@@ -8,7 +8,7 @@
     <string name="enter_name">Wie möchtest du angesprochen werden?</string>
     <string name="register">Registrieren</string>
     <string name="welcome">Willkommen %1$s!</string>
-    <string name="registration_description">Schön, dass du dich hier angemeldet hast. \nMindMirror ermöglicht es dir, dich selber besser kennenzulernen und deine Gefühle besser zu verstehen. Dadurch kannst du langfristig selbst bestimmen, wie du mit ihnen umgehst.</string>
+    <string name="registration_description">MindMirror ermöglicht es dir, dich selber besser kennenzulernen und deine Gefühle besser zu verstehen. Dadurch kannst du langfristig selbst bestimmen, wie du mit ihnen umgehst.</string>
     <string name="login">Login</string>
     <string name="login_name_or_email">Bitte gebe deinen Username oder deine Email an:</string>
     <string name="login_password">Bitte gebe dein Passwort ein:</string>
