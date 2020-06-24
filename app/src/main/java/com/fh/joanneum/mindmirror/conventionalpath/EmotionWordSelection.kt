@@ -33,15 +33,14 @@ class EmotionWordSelection : AppCompatActivity() {
         gridWordEmotions.adapter = adapter
 
         gridWordEmotions.onItemClickListener =
-            AdapterView.OnItemClickListener { parent, view, position, id ->
-                var emotion = parent.getItemAtPosition(position) as String
-                var textView = view.lblEmotion
+            AdapterView.OnItemClickListener { parent, view, position, _ ->
+                val emotion = parent.getItemAtPosition(position) as String
+                val textView = view.lblEmotion
 
                 ConventionalSession.setEmotions(emotion)
-                if(ConventionalSession.getEmotions().contains(emotion)){
+                if (ConventionalSession.getEmotions().contains(emotion)) {
                     textView.setTextColor(Color.BLACK)
-                }
-                else{
+                } else {
                     textView.setTextColor(Color.GRAY)
                 }
             }

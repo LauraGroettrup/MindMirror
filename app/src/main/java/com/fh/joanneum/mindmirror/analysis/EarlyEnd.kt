@@ -6,16 +6,15 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.MainActivity
 import com.fh.joanneum.mindmirror.PathSelection
 import com.fh.joanneum.mindmirror.R
 import com.fh.joanneum.mindmirror.model.Analysis
 import com.fh.joanneum.mindmirror.model.ConventionalSession
+import com.fh.joanneum.mindmirror.model.CreativeSession
 import com.fh.joanneum.mindmirror.model.User
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -26,7 +25,8 @@ class EarlyEnd : AppCompatActivity() {
 
     var picMap: MutableMap<String, String> = mutableMapOf()
     val db = Firebase.firestore
-    var sessionDocRef: DocumentReference = FirebaseFirestore.getInstance().document("users/user/sessions/session")
+    var sessionDocRef: DocumentReference =
+        FirebaseFirestore.getInstance().document("users/user/sessions/session")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,23 +36,23 @@ class EarlyEnd : AppCompatActivity() {
 
         btnBackToMain.setOnClickListener {
             val intent = Intent(this, PathSelection::class.java)
-           startActivity(intent)
+            startActivity(intent)
         }
 
     }
 
-    fun saveSessionData(){
+    fun saveSessionData() {
         val session = hashMapOf(
             "situation" to Analysis.getSituation(),
             "changeMood" to Analysis.getChangeMood(),
             "chosenSolution" to Analysis.getChosenSolution(),
-            "solutions" to  Analysis.getSolutions()
+            "solutions" to Analysis.getSolutions()
         )
-        if (!CreativeSession.getPicture().equals("")){
-            session.put("picture",CreativeSession.getPicture())
-            session.put("picExpression",CreativeSession.getPicExpression())
+        if (!CreativeSession.getPicture().equals("")) {
+            session.put("picture", CreativeSession.getPicture())
+            session.put("picExpression", CreativeSession.getPicExpression())
         } else {
-            session.put("emotions",ConventionalSession.getEmotions())
+            session.put("emotions", ConventionalSession.getEmotions())
         }
 
 
@@ -62,7 +62,7 @@ class EarlyEnd : AppCompatActivity() {
             .addOnSuccessListener { documentReference ->
                 Log.d("Message", "DocumentSnapShot added with ID: ${documentReference.id}")
             }
-            .addOnFailureListener{e ->
+            .addOnFailureListener { e ->
                 Log.e("Message", "Error adding document", e)
             }
     }
@@ -83,6 +83,7 @@ class EarlyEnd : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) {

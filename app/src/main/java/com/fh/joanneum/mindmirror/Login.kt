@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -45,7 +44,7 @@ class Login : AppCompatActivity() {
                         email?.text.toString(),
                         password?.text.toString()
                     )
-                        .addOnSuccessListener { result ->
+                        .addOnSuccessListener { _ ->
                             login()
                         }.addOnFailureListener { exception ->
                             Log.e("LOGIN", exception.toString())
@@ -59,7 +58,6 @@ class Login : AppCompatActivity() {
     fun login() {
         var userReference: DocumentReference = usersReference.document(auth.currentUser!!.uid)
         userReference.get().addOnSuccessListener { document ->
-            Log.d("Login", document.data?.get("username") as String)
             User.setUsername(document.data?.get("username") as String)
             User.setEmail(document.data?.get("email") as String)
             User.setPassword(document.data?.get("password") as String)

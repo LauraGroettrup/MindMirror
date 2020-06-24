@@ -8,7 +8,7 @@ import android.widget.*
 import com.fh.joanneum.mindmirror.R
 import com.fh.joanneum.mindmirror.model.Analysis
 
-class ActivitySolutionList () : AppCompatActivity() {
+class ActivitySolutionList() : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,14 +29,15 @@ class ActivitySolutionList () : AppCompatActivity() {
 
 
         listView.onItemClickListener =
-            AdapterView.OnItemClickListener { parent, view, position, id ->
+            AdapterView.OnItemClickListener { parent, _, position, _ ->
 
                 Analysis.setChosenSolution(parent.getItemAtPosition(position).toString())
                 val intent = Intent(this, End::class.java)
                 startActivity(intent)
-        }
+            }
 
     }
+
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) {

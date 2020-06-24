@@ -1,8 +1,8 @@
-import android.net.Uri
+package com.fh.joanneum.mindmirror.model
 
 object CreativeSession {
 
-    private lateinit var picture:String
+    private var picture:String = ""
     private var picExpression: String = ""
 
 

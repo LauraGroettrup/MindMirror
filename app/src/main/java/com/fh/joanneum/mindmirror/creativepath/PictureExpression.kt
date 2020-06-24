@@ -12,12 +12,12 @@ import com.bumptech.glide.Glide
 import com.fh.joanneum.mindmirror.MainActivity
 import com.fh.joanneum.mindmirror.R
 import com.fh.joanneum.mindmirror.analysis.SituationAnalysis
+import com.fh.joanneum.mindmirror.model.CreativeSession
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
-import kotlinx.android.synthetic.main.picture_emotion.view.*
 import kotlinx.android.synthetic.main.picture_expression.*
 
 class PictureExpression : AppCompatActivity() {
@@ -33,12 +33,13 @@ class PictureExpression : AppCompatActivity() {
 
         storage = Firebase.storage
         var storageRef = storage.reference
-        var imagesRef: StorageReference? = storageRef.child("images").child(CreativeSession.getPicture())
+        var imagesRef: StorageReference? =
+            storageRef.child("images").child(CreativeSession.getPicture())
 
         Glide.with(this).load(imagesRef).into(iVselectedPicture)
 
         inputField = findViewById(R.id.eTPicExpressionMood)
-        button = findViewById(R.id.btnContinue )
+        button = findViewById(R.id.btnContinue)
 
         button.setOnClickListener {
             answer2 = inputField.text.toString()

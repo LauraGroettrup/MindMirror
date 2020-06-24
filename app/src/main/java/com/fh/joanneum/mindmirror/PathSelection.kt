@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.path_selection.*
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.google.firebase.auth.FirebaseAuth
+import com.fh.joanneum.mindmirror.model.CreativeSession
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -21,7 +21,6 @@ class PathSelection : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.path_selection)
-        var username = User.getUsername()
         lblHello.setText(getString(R.string.hello, User.getUsername()))
         cleanSessions()
         btnConventionel.setOnClickListener {
@@ -52,11 +51,11 @@ class PathSelection : AppCompatActivity() {
         }
     }
 
-    fun cleanSessions(){
-         ConventionalSession.clear()
-         CreativeSession.clear()
-         Analysis.clear()
-     }
+    private fun cleanSessions() {
+        ConventionalSession.clear()
+        CreativeSession.clear()
+        Analysis.clear()
+    }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)

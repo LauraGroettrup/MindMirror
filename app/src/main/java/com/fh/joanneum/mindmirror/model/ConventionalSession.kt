@@ -3,21 +3,21 @@ package com.fh.joanneum.mindmirror.model
 object ConventionalSession {
     private var emotions = mutableListOf<String>()
 
-    fun getEmotions(): List<String>{
+    fun getEmotions(): List<String> {
         return emotions
     }
-    fun setEmotions(emotion: String){
-        if(!emotions.contains(emotion)){
+
+    fun setEmotions(emotion: String) {
+        if (!emotions.contains(emotion)) {
             emotions.add(emotion)
-        }
-        else{
+        } else {
             emotions.remove(emotion)
         }
     }
 
-    fun emotionsToString(): String{
+    fun emotionsToString(): String {
         var emotionsAsString = ""
-        for (emotion in emotions){
+        for (emotion in emotions) {
             emotionsAsString = emotionsAsString + emotion + ", "
         }
         return emotionsAsString.dropLast(2)

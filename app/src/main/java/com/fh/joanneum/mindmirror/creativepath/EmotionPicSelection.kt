@@ -7,10 +7,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.MainActivity
 import com.fh.joanneum.mindmirror.R
+import com.fh.joanneum.mindmirror.model.CreativeSession
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -38,9 +38,9 @@ class EmotionPicSelection : AppCompatActivity() {
         gridPicEmotions.adapter = adapter
 
         gridPicEmotions.onItemClickListener =
-            AdapterView.OnItemClickListener { parent, view, position, id ->
+            AdapterView.OnItemClickListener { parent, _, position, _ ->
 
-                var pictureReference = parent.getItemAtPosition(position) as StorageReference
+                val pictureReference = parent.getItemAtPosition(position) as StorageReference
                 CreativeSession.setPicture(pictureReference.name)
 
                 val intent = Intent(this, PictureExpression::class.java)
@@ -50,8 +50,8 @@ class EmotionPicSelection : AppCompatActivity() {
 
     fun getPicsFromFireStorage() {
         storage = Firebase.storage
-        var storageRef = storage.reference
-        var imagesRef: StorageReference? = storageRef.child("images")
+        val storageRef = storage.reference
+        val imagesRef: StorageReference? = storageRef.child("images")
         imagesRef?.listAll()?.addOnSuccessListener { images ->
             images.items.forEach { image ->
                 Log.i("Download", image.name)

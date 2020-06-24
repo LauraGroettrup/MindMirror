@@ -13,6 +13,7 @@ import com.fh.joanneum.mindmirror.conventionalpath.EmotionWordSelection
 import com.fh.joanneum.mindmirror.creativepath.PictureExpression
 import com.fh.joanneum.mindmirror.model.Analysis
 import com.fh.joanneum.mindmirror.model.ConventionalSession
+import com.fh.joanneum.mindmirror.model.CreativeSession
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.situation_analysis.*
@@ -26,17 +27,16 @@ class SituationAnalysis : AppCompatActivity() {
         setContentView(R.layout.situation_analysis)
 
         //get data from model
-        var answer2 = CreativeSession.getPicExpression()
+        var answer2 = CreativeSession.getPicture()
         val creative = !answer2.equals("")
         //textView
         val presentText = findViewById<TextView>(R.id.tVPicSubjectiveMeaning)
 
-        if(creative){
+        if (creative) {
             //setText
             presentText.text = answer2
 
-        }
-        else{
+        } else {
             tVPicMeaning.text = "Du fühlst dich gerade: "
             presentText.text = ConventionalSession.emotionsToString()
         }
@@ -54,7 +54,7 @@ class SituationAnalysis : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (!CreativeSession.getPicture().equals("")){
+        if (!CreativeSession.getPicture().equals("")) {
             val intent = Intent(this, PictureExpression::class.java)
             startActivity(intent)
 

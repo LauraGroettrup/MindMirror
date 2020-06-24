@@ -2,11 +2,9 @@ package com.fh.joanneum.mindmirror
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
 import android.util.Patterns
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -38,23 +36,23 @@ class Registration : AppCompatActivity() {
         if (editEnterUsername.text.toString().equals("")) {
             lblRegistrationError.text =
                 errorMsg + " Username darf nicht leer sein "
-            lblRegistrationError.visibility= View.VISIBLE
+            lblRegistrationError.visibility = View.VISIBLE
         } else if (editEnterEmail.text.toString().equals("")) {
             lblRegistrationError.text =
                 errorMsg + "Email darf nicht leer sein "
-            lblRegistrationError.visibility= View.VISIBLE
+            lblRegistrationError.visibility = View.VISIBLE
         } else if (!Patterns.EMAIL_ADDRESS.matcher(editEnterEmail.text.toString()).matches()) {
             lblRegistrationError.text =
                 errorMsg + "Email ist nicht gültig "
-            lblRegistrationError.visibility= View.VISIBLE
+            lblRegistrationError.visibility = View.VISIBLE
         } else if (editEnterPasswort.text.toString().equals("")) {
             lblRegistrationError.text =
                 errorMsg + "Passwort darf nicht leer sein "
-            lblRegistrationError.visibility= View.VISIBLE
+            lblRegistrationError.visibility = View.VISIBLE
         } else if (!editEnterPasswort.text.toString().equals(editRepeatPasswort.text.toString())) {
             lblRegistrationError.text =
                 errorMsg + "Nicht das gleiche Passwort"
-            lblRegistrationError.visibility= View.VISIBLE
+            lblRegistrationError.visibility = View.VISIBLE
         } else {
             User.setUsername(editEnterUsername.text.toString())
             registerUser()
@@ -72,19 +70,19 @@ class Registration : AppCompatActivity() {
             } else {
                 lblRegistrationError.text =
                     "Registrierung fehlgeschlagen. Falls du bereits ein Konto hast, log dich bitte ein."
-                lblRegistrationError.visibility= View.VISIBLE
+                lblRegistrationError.visibility = View.VISIBLE
             }
         }
     }
 
     private fun goToLogin(currentUser: FirebaseUser?) {
-        var userToSave: HashMap<String, Any> = HashMap<String, Any>()
-        var userReference: DocumentReference = usersReference.document(currentUser!!.uid)
+        val userToSave: HashMap<String, Any> = HashMap<String, Any>()
+        val userReference: DocumentReference = usersReference.document(currentUser!!.uid)
         userToSave.put("username", editEnterUsername.text.toString())
         userToSave.put("email", editEnterEmail.text.toString())
         userToSave.put("password", editEnterPasswort.text.toString())
         userReference.set(userToSave).addOnSuccessListener {
-            Log.d("DATABASE", "Saved the user in DB under " + currentUser!!.uid)
+            Log.d("DATABASE", "Saved the user in DB under " + currentUser.uid)
             val intent = Intent(this, RegistrationConfirmation::class.java)
             startActivity(intent)
         }.addOnFailureListener { exception: Exception -> Log.e("LOGIN", exception.toString()) }

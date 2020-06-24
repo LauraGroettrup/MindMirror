@@ -6,13 +6,13 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fh.joanneum.mindmirror.MainActivity
 import com.fh.joanneum.mindmirror.PathSelection
 import com.fh.joanneum.mindmirror.R
 import com.fh.joanneum.mindmirror.model.Analysis
 import com.fh.joanneum.mindmirror.model.ConventionalSession
+import com.fh.joanneum.mindmirror.model.CreativeSession
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -22,7 +22,8 @@ import kotlinx.android.synthetic.main.end.*
 
 class End : AppCompatActivity() {
     val db = Firebase.firestore
-    var sessionDocRef: DocumentReference = FirebaseFirestore.getInstance().document("sessions/session")
+    var sessionDocRef: DocumentReference =
+        FirebaseFirestore.getInstance().document("sessions/session")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,16 +42,16 @@ class End : AppCompatActivity() {
         }
     }
 
-    fun saveSessionData(){
+    fun saveSessionData() {
         val session = hashMapOf(
             "situation" to Analysis.getSituation(),
             "changeMood" to Analysis.getChangeMood(),
             "chosenSolution" to Analysis.getChosenSolution(),
-            "solutions" to  Analysis.getSolutions()
+            "solutions" to Analysis.getSolutions()
         )
-        if (!CreativeSession.getPicture().equals("")){
-            session.put("picture",CreativeSession.getPicture())
-            session.put("picExpression",CreativeSession.getPicExpression())
+        if (!CreativeSession.getPicture().equals("")) {
+            session.put("picture", CreativeSession.getPicture())
+            session.put("picExpression", CreativeSession.getPicExpression())
         } else {
             session.put("emotions", ConventionalSession.getEmotions())
         }
@@ -60,7 +61,7 @@ class End : AppCompatActivity() {
             .addOnSuccessListener { documentReference ->
                 Log.d("Message", "DocumentSnapShot added with ID: ${documentReference.id}")
             }
-            .addOnFailureListener{e ->
+            .addOnFailureListener { e ->
                 Log.e("Message", "Error adding document", e)
             }
     }

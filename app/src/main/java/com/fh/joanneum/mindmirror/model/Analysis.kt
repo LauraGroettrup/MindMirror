@@ -6,39 +6,41 @@ object Analysis {
     private var solutions = mutableListOf<String>()
     private var chosenSolution: String = ""
 
-    fun setSituation(events_: String){
+    fun setSituation(events_: String) {
         this.situation = events_
     }
-    fun getSituation(): String{
+
+    fun getSituation(): String {
         return situation
     }
 
-    fun setChangeMood(changeMood_: Boolean){
+    fun setChangeMood(changeMood_: Boolean) {
         this.changeMood = changeMood_
     }
-    fun getChangeMood(): Boolean{
+
+    fun getChangeMood(): Boolean {
         return changeMood
     }
 
-    fun setSolution(solution: String){
-        if(!solutions.contains(solution)){
+    fun setSolution(solution: String) {
+        if (!solutions.contains(solution)) {
             solutions.add(solution)
         }
     }
 
-    fun getSolutions():MutableList<String>{
+    fun getSolutions(): MutableList<String> {
         return solutions
     }
 
-    fun setChosenSolution(chosenOne:String){
+    fun setChosenSolution(chosenOne: String) {
         chosenSolution = chosenOne
     }
 
-    fun getChosenSolution(): String{
+    fun getChosenSolution(): String {
         return chosenSolution
     }
 
-    fun clear(){
+    fun clear() {
         situation = ""
         changeMood = false
         solutions.clear()
