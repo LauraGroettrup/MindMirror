@@ -28,7 +28,7 @@ class SituationAnalysis : AppCompatActivity() {
 
         //get data from model
         var answer2 = CreativeSession.getPicExpression()
-        val creative = !answer2.equals("")
+        val creative = !CreativeSession.getPicture().equals("")
         //textView
         val presentText = findViewById<TextView>(R.id.tVPicSubjectiveMeaning)
 
